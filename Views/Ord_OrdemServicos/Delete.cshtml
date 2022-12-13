@@ -1,0 +1,87 @@
+﻿@model TecGas.Models.Ord_OrdemServicos
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+
+<h3>Deseja excluir essa Ordem de Serviço?</h3>
+<div>
+    <h4>Ord_OrdemServicos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nº da Ordem
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_NumeroOrdem)
+        </dd>
+        <dt class = "col-sm-2">
+           Data de Abertura
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_DataAbertura)
+        </dd>
+        <dt class = "col-sm-2">
+            Código do Cliente
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoClienteId)
+        </dd>
+        <dt class = "col-sm-2">
+            Modelo do Equipamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_Modelo)
+        </dd>
+        <dt class = "col-sm-2">
+           Detalhes
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_Detalhes)
+        </dd>
+        <dt class = "col-sm-2">
+            Diagnóstico
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_Diagnostico)
+        </dd>
+        <dt class = "col-sm-2">
+            Solução
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_Solucao)
+        </dd>
+        <dt class = "col-sm-2">
+           Peças Trocadas
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_PecasTrocadas)
+        </dd>
+        <dt class = "col-sm-2">
+            Valor do Serviço
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_ValorServico)
+        </dd>
+        <dt class = "col-sm-2">
+           Valor das Peças
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_ValorPeca)
+        </dd>
+        <dt class = "col-sm-2">
+           Valor Total
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ord_ValorTotal)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Ord_OrdemId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

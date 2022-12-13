@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TecGas.Models.Cli_Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Gerencimento de Clientes</h4>
+
+<p>
+    <a asp-action="Create">Novo Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                CNPJ
+            </th>
+            <th>
+               Endereço
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cli_Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cli_CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cli_Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cli_Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cli_Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoClienteId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoClienteId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoClienteId">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

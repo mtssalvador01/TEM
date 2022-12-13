@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TecGas.Models.Ord_OrdemServicos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Gerencimento de Ordem de Servço</h4>
+
+<p>
+    <a asp-action="Create">Nova Ordem de Serviço</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Nº da Ordem
+            </th>
+            <th>
+               Data de Abertura
+            </th>
+            <th>
+               Código do Cliente
+            </th>
+            <th>
+                Modelo do Equipamento
+            </th>
+            <th>
+                Detalhes
+            </th>
+            <th>
+               Diagnóstico
+            </th>
+            <th>
+                Solução
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_NumeroOrdem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_DataAbertura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoClienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_Detalhes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_Diagnostico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ord_Solucao)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Ord_OrdemId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Ord_OrdemId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Ord_OrdemId">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

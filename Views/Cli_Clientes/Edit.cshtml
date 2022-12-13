@@ -1,0 +1,54 @@
+﻿@model TecGas.Models.Cli_Clientes
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodigoClienteId" />
+            <div class="form-group">
+                <label asp-for="Cli_Nome" class="control-label">Nome</label>
+                <input asp-for="Cli_Nome" class="form-control" />
+                <span asp-validation-for="Cli_Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cli_CNPJ" class="control-label">CNPJ</label>
+                <input asp-for="Cli_CNPJ" class="form-control" />
+                <span asp-validation-for="Cli_CNPJ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cli_Endereco" class="control-label">Endereço</label>
+                <input asp-for="Cli_Endereco" class="form-control" />
+                <span asp-validation-for="Cli_Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cli_Telefone" class="control-label">Telefone</label>
+                <input asp-for="Cli_Telefone" class="form-control" />
+                <span asp-validation-for="Cli_Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cli_Email" class="control-label">E-mail</label>
+                <input asp-for="Cli_Email" class="form-control" />
+                <span asp-validation-for="Cli_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

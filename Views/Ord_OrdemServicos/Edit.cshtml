@@ -1,0 +1,84 @@
+﻿@model TecGas.Models.Ord_OrdemServicos
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Ordem Serviço</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ord_OrdemId" />
+            <div class="form-group">
+                <label asp-for="Ord_NumeroOrdem" class="control-label">Nº da Ordem</label>
+                <input asp-for="Ord_NumeroOrdem" class="form-control" />
+                <span asp-validation-for="Ord_NumeroOrdem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_DataAbertura" class="control-label">Data de Abertura</label>
+                <input asp-for="Ord_DataAbertura" class="form-control" />
+                <span asp-validation-for="Ord_DataAbertura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoClienteId" class="control-label">Código do Cliente</label>
+                <input asp-for="CodigoClienteId" class="form-control" />
+                <span asp-validation-for="CodigoClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_Modelo" class="control-label">Modelo do Equipamento</label>
+                <input asp-for="Ord_Modelo" class="form-control" />
+                <span asp-validation-for="Ord_Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_Detalhes" class="control-label">Detalhes</label>
+                <input asp-for="Ord_Detalhes" class="form-control" />
+                <span asp-validation-for="Ord_Detalhes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_Diagnostico" class="control-label">Diagnóstico</label>
+                <input asp-for="Ord_Diagnostico" class="form-control" />
+                <span asp-validation-for="Ord_Diagnostico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_Solucao" class="control-label">Solução</label>
+                <input asp-for="Ord_Solucao" class="form-control" />
+                <span asp-validation-for="Ord_Solucao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_PecasTrocadas" class="control-label">Peças Trocadas</label>
+                <input asp-for="Ord_PecasTrocadas" class="form-control" />
+                <span asp-validation-for="Ord_PecasTrocadas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_ValorServico" class="control-label">Valor do Serviço</label>
+                <input asp-for="Ord_ValorServico" class="form-control" />
+                <span asp-validation-for="Ord_ValorServico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_ValorPeca" class="control-label">Valor das Peças</label>
+                <input asp-for="Ord_ValorPeca" class="form-control" />
+                <span asp-validation-for="Ord_ValorPeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ord_ValorTotal" class="control-label">Valor Total</label>
+                <input asp-for="Ord_ValorTotal" class="form-control" />
+                <span asp-validation-for="Ord_ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
